@@ -1,6 +1,9 @@
-import Link from "next/link";
+import { Placeholder } from "@/components/placeholder";
+import { Button } from "@/components/ui/button";
 import { initialTickets } from "@/data";
+import { TicketItem } from "@/features/ticket/ticket-item";
 import { ticketsPath } from "@/paths";
+import Link from "next/link";
 
 // src/app/tickets/[ticketId]/page.tsx
 type TicketPageProps = {
@@ -14,20 +17,21 @@ type TicketPageProps = {
     const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
   
       if(!ticket){
-        return <div>Ticket not found</div>
+        return (
+          <Placeholder 
+            label="Ticket not found"
+            button={
+              <Button asChild variant="outline">
+               <Link href={ticketsPath()}>Go to Tickets</Link>
+              </Button>
+            }
+          />
+        )
       }
   
     return (
-      <div>
-        <Link href="/" className="underline">
-               Back to Home
-        </Link><br/>
-        <Link href={ticketsPath()} className="underline">
-               Back to Tickets
-        </Link>
-        
-        <h2 className="text-lg">{ticket.title}</h2>
-        <p className="text-sm">{ticket.content}</p>
+      <div className="flex justify-center animate-fade-from-top">
+        <TicketItem ticket={ticket} isDetail />
       </div>
   
     );
