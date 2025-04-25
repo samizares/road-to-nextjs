@@ -1,9 +1,10 @@
 import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
-import { initialTickets } from "@/data";
-import { TicketItem } from "@/features/ticket/ticket-item";
+import { TicketItem } from "@/features/ticket/components/ticket-item";
+import { getTicket } from "@/features/ticket/queries/getTicket";
 import { ticketsPath } from "@/paths";
 import Link from "next/link";
+//import { notFound } from "next/navigation";
 
 // src/app/tickets/[ticketId]/page.tsx
 type TicketPageProps = {
@@ -13,20 +14,18 @@ type TicketPageProps = {
   };
   
   const TicketPage = async ({ params }: TicketPageProps) => {
-    const { ticketId } = await params;
-    const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
+    //const { ticketId } = await params;
+    //const ticket = initialTickets.find((ticket) => ticket.id === ticketId);
+    const ticket = await getTicket((await params).ticketId);
+    
   
       if(!ticket){
-        return (
-          <Placeholder 
-            label="Ticket not found"
-            button={
-              <Button asChild variant="outline">
-               <Link href={ticketsPath()}>Go to Tickets</Link>
-              </Button>
-            }
-          />
-        )
+       // notFound();
+        return <Placeholder label="Ticket not found"  button={
+          <Button asChild variant="outline">
+           <Link href={ticketsPath()}>Go to Tickets</Link>
+          </Button>
+        } />
       }
   
     return (

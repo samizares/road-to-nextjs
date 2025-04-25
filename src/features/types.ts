@@ -6,3 +6,5 @@ export type Ticket = {
     content: string;
     status: TicketStatus;
 }
+
+//This file will be obsolete when we import our Ticket model from prisma client.Historical purposes

@@ -3,8 +3,8 @@ import { cloneElement } from "react";
 
 type PlaceholderTypes= {
     label: string;
-    icon?: React.ReactElement<any>;
-    button?: React.ReactElement<any>;
+    icon?: React.ReactElement<HTMLDivElement>;
+    button?: React.ReactElement<HTMLDivElement>;
 }
 const Placeholder= ({label,
    icon=<LucideMessageSquareWarning />,

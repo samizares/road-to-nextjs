@@ -1,8 +1,9 @@
-import Link from "next/link";
-import { Button, buttonVariants } from "./ui/button";
-import { LucideSquareKanban } from "lucide-react";
 import { homePath, ticketsPath } from "@/paths";
+import { LucideSquareKanban } from "lucide-react";
+import Link from "next/link";
+
 import { ThemeSwitcher } from "./theme/theme-switcher";
+import { Button, buttonVariants } from "./ui/button";
 
 const Header =() =>{
     return(

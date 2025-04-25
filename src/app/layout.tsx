@@ -1,12 +1,8 @@
-import  {Header} from "@/components/header";
 import "./globals.css";
-import { Button, buttonVariants } from "@/components/ui/button"
-import { homePath, ticketsPath } from "@/paths";
-import { LucideSquareKanban } from "lucide-react";
+import  {Header} from "@/components/header";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import { ThemeProvider } from "@/components/theme/theme-provider";
 
 
 const geistSans = Geist({
