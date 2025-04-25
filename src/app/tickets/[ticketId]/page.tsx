@@ -1,12 +1,14 @@
+import Link from "next/link";
 import { Placeholder } from "@/components/placeholder";
 import { Button } from "@/components/ui/button";
 import { TicketItem } from "@/features/ticket/components/ticket-item";
 import { getTicket } from "@/features/ticket/queries/getTicket";
 import { ticketsPath } from "@/paths";
-import Link from "next/link";
+
+
+
 //import { notFound } from "next/navigation";
 
-// src/app/tickets/[ticketId]/page.tsx
 type TicketPageProps = {
     params: Promise<{
       ticketId: string;
