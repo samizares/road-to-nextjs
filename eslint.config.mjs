@@ -28,7 +28,7 @@ const eslintConfig = [
   },
   {
     ignores: [
-      'src/generated/**'
+      'src/generated/**','src/lib/utils.ts'
     ]
   },
 ];

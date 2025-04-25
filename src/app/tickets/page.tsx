@@ -1,9 +1,9 @@
-import { Suspense} from "react";
-import { ErrorBoundary } from "react-error-boundary";
 import { Heading } from "@/components/heading";
 import { Placeholder } from "@/components/placeholder";
 import { Spinner } from "@/components/spinner";
 import { TicketList } from "@/features/ticket/components/ticket-list";
+import { Suspense} from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 const TicketsPage = () => {
   // const [tickets, setTickets] = useState<Ticket[]>([]);
