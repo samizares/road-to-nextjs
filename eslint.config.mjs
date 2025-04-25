@@ -13,6 +13,10 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
+    "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": "latest"
+  },
     plugins: {
       "simple-import-sort": simpleImportSort,
     },
